@@ -3,74 +3,74 @@ const questions = [
     {
         question: "السؤال الاول كيف تحب أن تتعلم شيئًا جديدًا؟",
         images: [
-            { src: "/asses/quistionnaire/q1/a1/صورة1.jpg", title:"طفل يشاهد لوحة مليئة بالرسومات", value: "imagev1" },
-            { src: "/asses/quistionnaire/q1/a2/صورة2.jpg", title:"طفل يجلس ويسيتمع الى المعلمة", value: "imagea1" },
-            { src: "/asses/quistionnaire/q1/a3/صورة4.jpg", title:"طفل يلعب بالمكعبات والأدوات التعليمية", value: "imagek1" },
-            { src: "/asses/quistionnaire/q1/a4/صورة5.jpg", title:"طفل يمسك كتاب ويشير للكلمات", value: "imagel1" }
+            { src: "asses/quistionnaire/q1/a1/صورة1.jpg", title:"طفل يشاهد لوحة مليئة بالرسومات", value: "imagev1" },
+            { src: "asses/quistionnaire/q1/a2/صورة2.jpg", title:"طفل يجلس ويسيتمع الى المعلمة", value: "imagea1" },
+            { src: "asses/quistionnaire/q1/a3/صورة4.jpg", title:"طفل يلعب بالمكعبات والأدوات التعليمية", value: "imagek1" },
+            { src: "asses/quistionnaire/q1/a4/صورة5.jpg", title:"طفل يمسك كتاب ويشير للكلمات", value: "imagel1" }
         ]
     },
     {
         question: "السؤال الثاني كيف تحب أن تتعلم عن الحيوانات؟",
         images: [
-            { src: "/asses/quistionnaire/q2/a1/صورة6.jpg", title:"أشاهد صور الحيوانات", value: "imagev3" },
-            { src: "/asses/quistionnaire/q2/a2/صورة7.jpg", title:"استمع إلي اصوات الحيوانات", value: "imagea3" },
-            { src: "/asses/quistionnaire/q2/a3/صورة8.jpg", title:"اقلد حركات الحيوانات", value: "imagel3" },
-            { src: "/asses/quistionnaire/q2/a4/صورة9.jpg", title:"أقرأ اسماء الحيوانات", value: "imagel2" }
+            { src: "asses/quistionnaire/q2/a1/صورة6.jpg", title:"أشاهد صور الحيوانات", value: "imagev3" },
+            { src: "asses/quistionnaire/q2/a2/صورة7.jpg", title:"استمع إلي اصوات الحيوانات", value: "imagea3" },
+            { src: "asses/quistionnaire/q2/a3/صورة8.jpg", title:"اقلد حركات الحيوانات", value: "imagel3" },
+            { src: "asses/quistionnaire/q2/a4/صورة9.jpg", title:"أقرأ اسماء الحيوانات", value: "imagel2" }
         ]
     },
     {
         question: "السؤال الثالث كيف تحب أن تتعلم الأرقام ؟",
         images: [
-            { src: "/asses/quistionnaire/q3/a1/صورة12.jpg", title:"أشاهد بطاقات الأرقام", value: "imagev2" },
-            { src: "/asses/quistionnaire/q3/a2/صورة10.jpg", title:"أستمع الى نشيد الأرقام", value: "imagea2" },
-            { src: "/asses/quistionnaire/q3/a3/صورة.jpeg", title:" أقرا الارقام ", value: "imagek2" },
-            { src: "/asses/quistionnaire/q3/a4/صورة13.jpg", title:"أعد المكعبات", value: "imagek3" }
+            { src: "asses/quistionnaire/q3/a1/صورة12.jpg", title:"أشاهد بطاقات الأرقام", value: "imagev2" },
+            { src: "asses/quistionnaire/q3/a2/صورة10.jpg", title:"أستمع الى نشيد الأرقام", value: "imagea2" },
+            { src: "asses/quistionnaire/q3/a3/صورة.jpeg", title:" أقرا الارقام ", value: "imagek2" },
+            { src: "asses/quistionnaire/q3/a4/صورة13.jpg", title:"أعد المكعبات", value: "imagek3" }
         ]
     },
     {
         question: "السؤال الرابع كيف تحب ان تحفظ الأناشيد ؟",
         images: [
-            { src: "/asses/quistionnaire/q4/a1/صورة1.jpg", title:"أشاهد صور معبرة عن كلمات النشيد", value: "imagev4" },
-            { src: "/asses/quistionnaire/q4/a2/صورة2.jpg", title:"أستمع للمعلمة وهي تغني", value: "imagea4" },
-            { src: "/asses/quistionnaire/q4/a3/صورة3.jpg", title:"أتحرك مع النشيد", value: "imagek4" },
-            { src: "/asses/quistionnaire/q4/a4/صورة4.jpg", title:"أقرأ كلمات النشيد", value: "imagel4" }
+            { src: "asses/quistionnaire/q4/a1/صورة1.jpg", title:"أشاهد صور معبرة عن كلمات النشيد", value: "imagev4" },
+            { src: "asses/quistionnaire/q4/a2/صورة2.jpg", title:"أستمع للمعلمة وهي تغني", value: "imagea4" },
+            { src: "asses/quistionnaire/q4/a3/صورة3.jpg", title:"أتحرك مع النشيد", value: "imagek4" },
+            { src: "asses/quistionnaire/q4/a4/صورة4.jpg", title:"أقرأ كلمات النشيد", value: "imagel4" }
         ]
         
     },
     {
         question: "السؤال الخامس ماذا تفعل عندما تريد معرفة طريق البيت ؟",
         images: [
-            { src: "/asses/quistionnaire/q5/a1/صورة1.jpg", title:"أشاهد خريطة او رسمة للحي", value: "imagev5" },
-            { src: "/asses/quistionnaire/q5/a2/صورة2.jpg", title:"استمع لشخص يشرح الاتجاهات", value: "imagea5" },
-            { src: "/asses/quistionnaire/q5/a3/صورة3.jpg", title:"اتبع اشارات الطريق بنفسي", value: "imagek5" },
-            { src: "/asses/quistionnaire/q5/a4/صورة4.jpg", title:"أقرأ اللوحات الإرشادية", value: "imagel5" }
+            { src: "asses/quistionnaire/q5/a1/صورة1.jpg", title:"أشاهد خريطة او رسمة للحي", value: "imagev5" },
+            { src: "asses/quistionnaire/q5/a2/صورة2.jpg", title:"استمع لشخص يشرح الاتجاهات", value: "imagea5" },
+            { src: "asses/quistionnaire/q5/a3/صورة3.jpg", title:"اتبع اشارات الطريق بنفسي", value: "imagek5" },
+            { src: "asses/quistionnaire/q5/a4/صورة4.jpg", title:"أقرأ اللوحات الإرشادية", value: "imagel5" }
         ]
     },
     {
         question: "السؤال السادس ماذا تفعل عندما تلعب لعبة تركيب (Puzzle)",
         images: [
-            { src: "/asses/quistionnaire/q6/a1/صورة5.jpg", title:"اشاهد الصورة كاملة قبل البدأ", value: "imagev6" },
-            { src: "/asses/quistionnaire/q6/a2/صورة6.jpg", title:"استمع لشرح صديقي كيف يركبها", value: "imagea6" },
-            { src: "/asses/quistionnaire/q6/a3/صورة7.png", title:"ابدأ بتركيب القطع مباشرة", value: "imagek6" },
-            { src: "/asses/quistionnaire/q6/a4/صورة1.jpg", title:"أقرأ التعليمات", value: "imagel6" }
+            { src: "asses/quistionnaire/q6/a1/صورة5.jpg", title:"اشاهد الصورة كاملة قبل البدأ", value: "imagev6" },
+            { src: "asses/quistionnaire/q6/a2/صورة6.jpg", title:"استمع لشرح صديقي كيف يركبها", value: "imagea6" },
+            { src: "asses/quistionnaire/q6/a3/صورة7.png", title:"ابدأ بتركيب القطع مباشرة", value: "imagek6" },
+            { src: "asses/quistionnaire/q6/a4/صورة1.jpg", title:"أقرأ التعليمات", value: "imagel6" }
         ]
     },
     {
         question: "السؤال السابع ماذا تفعل اذا اردت تعلم لعبة رياضية ؟",
         images: [
-            { src: "/asses/quistionnaire/q7/a1/صورة8.jpg", title:"اشاهد صور او فيديو للعبة", value: "imagev7" },
-            { src: "/asses/quistionnaire/q7/a2/صورة9.jpg", title:"استمع لشرح القوانين من المدرب", value: "imagea7" },
-            { src: "/asses/quistionnaire/q7/a3/صورة10.jpg", title:"اجرب تنفيذ الحركات بنفسي", value: "imagek7" },
-            { src: "/asses/quistionnaire/q7/a4/صورة11.jpg", title:"اقرأ قوانين اللعبة", value: "imagel7" }
+            { src: "asses/quistionnaire/q7/a1/صورة8.jpg", title:"اشاهد صور او فيديو للعبة", value: "imagev7" },
+            { src: "asses/quistionnaire/q7/a2/صورة9.jpg", title:"استمع لشرح القوانين من المدرب", value: "imagea7" },
+            { src: "asses/quistionnaire/q7/a3/صورة10.jpg", title:"اجرب تنفيذ الحركات بنفسي", value: "imagek7" },
+            { src: "asses/quistionnaire/q7/a4/صورة11.jpg", title:"اقرأ قوانين اللعبة", value: "imagel7" }
         ]
     },
     {
         question: "السؤال الثامن كيف تحب ان تتعلم عن الفواكة ؟ ",
         images: [
-            { src: "/asses/quistionnaire/q8/a1/صورة12.jpg", title:"اشاهد صور الفواكة الملونة", value: "imagev8" },
-            { src: "/asses/quistionnaire/q8/a2/صورة13.jpg", title:"استمع للمعلمة وهي تتحدث عن الفواكة", value: "imagea8" },
-            { src: "/asses/quistionnaire/q8/a3/صورة14.jpg", title:"المس الفواكة واتذوقها واشم رائحتها", value: "imagek8" },
-            { src: "/asses/quistionnaire/q8/a4/صورة.jpg", title:"اقرأ اسماء الفواكة المكتوبة", value: "imagel8" }
+            { src: "asses/quistionnaire/q8/a1/صورة12.jpg", title:"اشاهد صور الفواكة الملونة", value: "imagev8" },
+            { src: "asses/quistionnaire/q8/a2/صورة13.jpg", title:"استمع للمعلمة وهي تتحدث عن الفواكة", value: "imagea8" },
+            { src: "asses/quistionnaire/q8/a3/صورة14.jpg", title:"المس الفواكة واتذوقها واشم رائحتها", value: "imagek8" },
+            { src: "asses/quistionnaire/q8/a4/صورة.jpg", title:"اقرأ اسماء الفواكة المكتوبة", value: "imagel8" }
         ]
     },
 ];
@@ -202,4 +202,5 @@ function detectThinkingStyle(answers) {
 
 // 🔹 تحميل أول سؤال عند فتح الصفحة
 // loadQuestion();
+
 
