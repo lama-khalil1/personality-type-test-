@@ -4,7 +4,7 @@ const questions = [
         question: "السؤال الاول كيف تحب أن تتعلم شيئًا جديدًا؟",
         images: [
             { src: "asses/quistionnaire/q1/a1/صورة1.jpg", title:"طفل يشاهد لوحة مليئة بالرسومات", value: "imagev1" },
-            { src: "asses/quistionnaire/q1/a2/صورة2.jpg", title:"طفل يجلس ويسيتمع الى المعلمة", value: "imagea1" },
+            { src: "asses/quistionnaire/q1/a2/صورة2.jpg", title:"طفل يجلس ويستمع الى المعلمة", value: "imagea1" },
             { src: "asses/quistionnaire/q1/a3/صورة4.jpg", title:"طفل يلعب بالمكعبات والأدوات التعليمية", value: "imagek1" },
             { src: "asses/quistionnaire/q1/a4/صورة5.jpg", title:"طفل يمسك كتاب ويشير للكلمات", value: "imagel1" }
         ]
@@ -202,5 +202,6 @@ function detectThinkingStyle(answers) {
 
 // 🔹 تحميل أول سؤال عند فتح الصفحة
 // loadQuestion();
+
 
 
