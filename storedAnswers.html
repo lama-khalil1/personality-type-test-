@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتائج الأطفال</title>
+    <link rel="stylesheet" href="style.css">
+        <style>
+        /* ✅ نضبط الجسم ليكون عمودي ويمتد على كامل الشاشة */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+    background: linear-gradient(to right, #4a7ab5, #229497, #24a148);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+    height: 80px; /* ارتفاع الهيدر */
+}
+
+header img {
+    height: 60px; /* حجم الصورة */
+}
+
+header h2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    text-align: center;
+}
+
+
+        main { 
+            flex: 1; /* ✅ يخلي المين يتمدد وياخذ المساحة الفاضية */
+            display: flex;  
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            overflow: auto;
+        }
+
+        footer{
+            padding: 10px 40px;
+            background: linear-gradient(to right, #4a7ab5, #229497, #24a148);
+            width: 100%;
+            text-align: left;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            text-align: center;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+ 
+<body>
+    <header>
+    <h2>اختبار تحديد انماط الشخصية (نمطي شخصيتي)</h2>
+    <img src="asses/logo.png" alt="Logo" width="80px">
+</header>
+
+    <main>
+      <h1 style="text-align: center;">جدول نتائج الأطفال</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>تاريخ التسجيل</th>
+                <th>نمط التفكير</th>
+                <th>الفصل</th>
+                <th>الاسم</th>
+            </tr>
+        </thead>
+        <tbody id="resultsTableBody">
+            <tr><td colspan="5">جاري تحميل البيانات...</td></tr>
+        </tbody>
+    </table>
+    
+    </main>
+
+    <footer>
+        <button id="Homebtn">العودة للصفحة الرئيسية </button>
+
+    </footer>
+     
+
+    <script type="module">
+      document.addEventListener("DOMContentLoaded", () => {
+    const Homebtn = document.getElementById("Homebtn");
+
+    // التأكد من وجود الزر
+    if (Homebtn) {
+        Homebtn.addEventListener("click", () => {
+            // توجيه المستخدم إلى صفحة "storedAnswers.html"
+            window.location.href = "index.html";
+        });
+    } else {
+        console.error("الزر 'Homebtn' غير موجود في الصفحة");
+    }
+});
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+        import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyB-FZIk3MoPegDHsmDDUzl5pYCzi4AnlEQ",
+            authDomain: "studentpatterns.firebaseapp.com",
+            projectId: "studentpatterns",
+            storageBucket: "studentpatterns.firebasestorage.app",
+            messagingSenderId: "533359813954",
+            appId: "1:533359813954:web:909cbdcd20733ac6e994db"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        async function loadResults() {
+            const tbody = document.getElementById("resultsTableBody");
+            tbody.innerHTML = ""; // مسح المحتوى القديم
+
+            try {
+                const q = query(collection(db, "results"), orderBy("createdAt", "desc"));
+                const snapshot = await getDocs(q);
+
+                if (snapshot.empty) {
+                    tbody.innerHTML = "<tr><td colspan='5'>لا توجد بيانات بعد</td></tr>";
+                    return;
+                }
+
+                snapshot.forEach(doc => {
+                    const data = doc.data();
+                    const answers = Array.isArray(data.answers) ? data.answers.join(", ") : "";
+                    const date = data.createdAt ? new Date(data.createdAt.seconds * 1000).toLocaleString("ar-EG") : "";
+
+                    const row = `<tr>
+                        <td>${date}</td>
+                        <td>${data.thinkingStyle || ""}</td>
+                         <td>${data.desc || ""}</td>
+                        <td>${data.name || ""}</td>
+                    </tr>`;
+                    tbody.innerHTML += row;
+                });
+            } catch (error) {
+                console.error("حدث خطأ أثناء جلب البيانات:", error);
+                tbody.innerHTML = "<tr><td colspan='5'>حدث خطأ أثناء تحميل البيانات</td></tr>";
+            }
+        }
+
+        loadResults();
+    </script>
+</body>
+</html>
