@@ -10,6 +10,7 @@ header {
     color: white;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     padding: 0 20px;
     position: relative;
     height: 80px; /* ارتفاع الهيدر */
@@ -241,4 +242,5 @@ button:hover {
         .close-btn:hover {
             background-color: #45a049;
         }
+
         
