@@ -8,7 +8,6 @@
     <style>
         body {
             text-align: center;
-            display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
@@ -49,6 +48,8 @@ body {
 
         .credits-container {
     background: #ffffff;
+            postion:relative;
+            right:10%;
     padding: 30px;
     border-radius: 20px;
     width: 80%;
@@ -86,13 +87,7 @@ body {
             font-size: 16px;
         }
 
-         footer{
-            padding: 10px 40px;
-            background: linear-gradient(to right, #4a7ab5, #229497, #24a148);
-            width: 100%;
-            text-align: left;
-        }
-        
+       
 
     </style>
 </head>
@@ -113,10 +108,9 @@ body {
 
 <h2>تصميم وتطوير مهندسات البرمجيات:<br>لمى الحازمي وريناد الحربي</h2>
 
-<footer>
-        <button id="Homebtn">العودة للصفحة الرئيسية </button>
 
-    </footer>
+        <button id="Homebtn">العودة للصفحة الرئيسية </button>
+    </div>
         <script>
        document.addEventListener("DOMContentLoaded", () => {
     const Homebtn = document.getElementById("Homebtn");
@@ -134,7 +128,9 @@ body {
 
    </script>
 </body>
+    
 </html>
+
 
 
 
