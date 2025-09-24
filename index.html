@@ -135,7 +135,7 @@ document.getElementById("noBtn").addEventListener("click", () => {
     // تأكد من حساب نمط التفكير قبل استخدامه
     const resultMessage = document.getElementById("resultMessage");
     const thinkingStyle = detectThinkingStyle(selectedValues); // احسب النمط
-    resultMessage.innerText = "نمط الشخصية: " + thinkingStyle;
+    resultMessage.innerText = "نمط الشخصية للطفل هو : " + thinkingStyle;
 
     const modal = document.getElementById("myModal");
     modal.style.display = "flex"; // عرض النافذة المنبثقة
@@ -153,6 +153,7 @@ document.getElementById("noBtn").addEventListener("click", () => {
 </body>  <!-- ربط ملف الـ JavaScript -->
 </body>
 </html>
+
 
 
 
