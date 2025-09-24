@@ -57,8 +57,8 @@
 
  <div id="myModal" class="modal">
             <div class="modal-content">
-                <h2>نتيجة الاختبار</h2>
-                <p id="resultMessage">نمط التفكير: </p>
+                <h1>نتيجة الاختبار</h1>
+                <p id="resultMessage" style="font-size: large;">نمط الشخصية للطفل هو : </p>
                 <button id="closeModalBtn" class="close-btn">إغلاق</button>
                 <button id="saveResultBtn" class="save-btn">💾 حفظ النتيجة</button>
             </div>
@@ -135,7 +135,7 @@ document.getElementById("noBtn").addEventListener("click", () => {
     // تأكد من حساب نمط التفكير قبل استخدامه
     const resultMessage = document.getElementById("resultMessage");
     const thinkingStyle = detectThinkingStyle(selectedValues); // احسب النمط
-    resultMessage.innerText = "نمط التفكير: " + thinkingStyle;
+    resultMessage.innerText = "نمط الشخصية: " + thinkingStyle;
 
     const modal = document.getElementById("myModal");
     modal.style.display = "flex"; // عرض النافذة المنبثقة
@@ -153,6 +153,7 @@ document.getElementById("noBtn").addEventListener("click", () => {
 </body>  <!-- ربط ملف الـ JavaScript -->
 </body>
 </html>
+
 
 
 
