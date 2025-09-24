@@ -242,5 +242,8 @@ button:hover {
         .close-btn:hover {
             background-color: #45a049;
         }
-
+#resultMessage {
+    font-size: 24px; 
+}
         
+
