@@ -7,43 +7,51 @@
     <link rel="stylesheet" href="style.css"> <!-- ربط ستايل الشيت الخارجي -->
     <style>
         body {
-             text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding-top: 80px;   
-        }
-       /* الهيدر نفسه بدون أي تغيير في الشكل */
+    display: flex;
+    justify-content: center;      /* توسيط أفقي */
+    align-items: center;          /* توسيط عمودي */
+    min-height: calc(100vh - 100px); /* ارتفاع الشاشة ناقص ارتفاع الهيدر */
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0; /* ما نحتاج padding-top */
+}
+
 header {
-    position: fixed;       /* يثبت الهيدر أعلى الصفحة */
+    position: fixed;
     top: 0;
-    left: 0;               /* الصورة تكون على اليسار */
-    width: 100%;           /* امتداد الهيدر كامل */
+    left: 0;
+    width: 100%;
+    height: 100px; /* 👈 تأكدي من نفس ارتفاع الهيدر */
     background: linear-gradient(to right, #4a7ab5, #229497, #24a148);
     color: white;
     text-align: center;
     display: flex;
     align-items: center;
-    justify-content: center; /* النص في الوسط */
+    justify-content: center;
     padding: 0 20px;
     gap: 30px;
-    z-index: 1000;         /* يبقى فوق باقي الصفحة */
+    z-index: 1000;
 }
 
 header img {
     position: absolute;
-    left: 20px;            /* الصورة على اليسار مع مسافة من الحافة */
-    height: 60px;          /* حجم الصورة */
+    left: 20px;
+    height: 60px;
 }
 
-
-/* المسافة بين محتوى الصفحة والهيدر */
-body {
-    padding-top: 100px;    /* ضع نفس ارتفاع الهيدر أو أكثر حسب الحاجة */
+.credits-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 700px;
+    box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -131,6 +139,7 @@ body {
 </body>
     
 </html>
+
 
 
 
