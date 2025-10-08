@@ -13,18 +13,27 @@
     </header>
     <main>
 
-        <div id="startSection">
-            <h3>إبدا بإدخال بيانات الطفل</h3>
-            <input type="text" id="childName" placeholder="أدخل اسم الطفل" />
-            <input type="text" id="childDesc" placeholder="أدخل الفصل" />
-            <div class="startbtncontainer">
-                <button id="startBtn">ابدأ</button>
-                <button id="storeda">الإطلاع على النتائج المحفوظه</button>
-                <h5 style="text-align: center; color: dimgray;">جميع الصور المستخدمة تم انشائها بواسطة الذكاء الإصطناعي</h5>
-            </div>
-           
+        <!-- wrapper جديد يحوي الصور والبوكس المركزي -->
+<div class="with-sides">
+  <!-- صورة على اليسار -->
+  <img src="asses/طفلة.png" alt="طفلة" class="side-photo left">
 
-        </div>
+  <!-- البوكس المركزي (معدل قليلاً ليكون ضابط العرض) -->
+  <div id="startSection">
+      <h3>إبدا بإدخال بيانات الطفل</h3>
+      <input type="text" id="childName" placeholder="أدخل اسم الطفل" />
+      <input type="text" id="childDesc" placeholder="أدخل الفصل" />
+      <div class="startbtncontainer">
+          <button id="startBtn">ابدأ</button>
+          <button id="storeda">الإطلاع على النتائج المحفوظه</button>
+          <h5 style="text-align: center; color: dimgray;">جميع الصور المستخدمة تم انشائها بواسطة الذكاء الإصطناعي</h5>
+      </div>
+  </div>
+
+  <!-- صورة على اليمين -->
+  <img src="asses/طفل.png" alt="طفل" class="side-photo right">
+</div>
+
 
         <div class="quistioncontainer" style="display: none;">
              <h2 id="questionText">هل تريد معرفة المزيد؟</h2>
@@ -153,7 +162,6 @@ document.getElementById("noBtn").addEventListener("click", () => {
 </body>  <!-- ربط ملف الـ JavaScript -->
 </body>
 </html>
-
 
 
 
