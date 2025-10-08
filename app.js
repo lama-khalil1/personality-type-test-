@@ -203,8 +203,50 @@ function detectThinkingStyle(answers) {
 // 🔹 تحميل أول سؤال عند فتح الصفحة
 // loadQuestion();
 
+/* ================== إظهار/إخفاء الصور الجانبية ================== */
+/* ضعي هذا المقطع في نهاية ملف app.js (بعد كل الكود اللي أعطيتِه) */
 
+(function() {
+  // الحاويات التي قد تحتوي الصور الجانبية
+  const sideContainers = document.querySelectorAll('.with-sides, .table-with-sides');
 
+  // أزرار وعناصر التحكم
+  const startBtn = document.getElementById('startBtn');          // زر ابدأ
+  const closeModalBtn = document.getElementById('closeModalBtn'); // زر إغلاق المودال (إن وُجد)
+  const Homebtn = document.getElementById('Homebtn');            // زر العودة (إن وُجد)
+  const qContainer = document.querySelector('.quistioncontainer'); // صندوق الأسئلة
+
+  // دوال المساعدة
+  function hideSidePhotos() {
+    sideContainers.forEach(c => c.classList.add('hide-sides'));
+  }
+  function showSidePhotos() {
+    sideContainers.forEach(c => c.classList.remove('hide-sides'));
+  }
+
+  // 1) عند الضغط على زر "ابدأ" نخفي الصور (هذا يغطي أكثر الحالات)
+  if (startBtn) {
+    startBtn.addEventListener('click', () => {
+      hideSidePhotos();
+      // لو عندك كود آخر يظهر الأسئلة هنا، هذا يكفي لإخفاء الصور
+    });
+  }
+
+  // 2) مراقب للتغيّر في حالة صندوق الأسئلة (لو يتم إظهاره بطرق أخرى)
+  if (qContainer) {
+    const observer = new MutationObserver(() => {
+      const isVisible = (qContainer.offsetParent !== null) || (qContainer.style.display && qContainer.style.display !== 'none');
+      if (isVisible) hideSidePhotos();
+    });
+    observer.observe(qContainer, { attributes: true, attributeFilter: ['style', 'class'] });
+  }
+
+  // 3) عند إغلاق المودال أو الضغط على زر العودة، نعيد الصور (اختياري)
+  if (closeModalBtn) closeModalBtn.addEventListener('click', showSidePhotos);
+  if (Homebtn) Homebtn.addEventListener('click', showSidePhotos);
+
+  // ملاحظة: إذا تريدين أن الصور تُخفي أيضاً أثناء التصدير، أضيفي hideSidePhotos() داخل دالة التصدير بعد حفظ الملف.
+})();
 
 
 
