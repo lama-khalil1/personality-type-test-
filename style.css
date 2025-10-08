@@ -244,6 +244,90 @@ button:hover {
 #resultMessage {
     font-size: 24px; 
 }
-        
+/* حاوية تسوي صف أفقي: صورة - بوكس مركزي - صورة */
+.with-sides {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;              /* المسافة بين الصور والبوكس */
+    padding: 40px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
 
+/* ضبط البوكس المركزي */
+#startSection {
+    max-width: 560px;       /* عرض البوكس */
+    width: 100%;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+/* الصور الجانبية */
+.side-photo {
+    width: 220px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    flex-shrink: 0;         /* لا تنكمش الصورة */
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+/* تأثير عند المرور لو حبيت */
+.side-photo:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+}
+
+/* إذا أردتي الصورة اليسرى تظهر على اليسار والصورة اليمنى على اليمين - (اختياري لتبديل الترتيب في RTL) */
+.with-sides .left  { order: 1; } /* اليسار أول */
+.with-sides #startSection { order: 2; }
+.with-sides .right { order: 3; }
+
+/* تجاوب - على الشاشات الصغيرة نجرّهم تحت البوكس عمودياً */
+@media (max-width: 900px) {
+    .with-sides {
+        flex-direction: column;
+        gap: 18px;
+    }
+    .side-photo {
+        width: 160px;
+        height: 220px;
+    }
+    #startSection { max-width: 520px; padding: 24px; }
+}
+
+/* لو الشاشة أصغر (هاتف) ونبغي نخفي الصور لتوفير مساحة */
+@media (max-width: 520px) {
+    .side-photo { display: none; }
+    #startSection { padding: 20px; }
+}
+.hide-sides .side-photo {
+  display: none !important;
+  opacity: 0;
+  transform: translateY(-6px);
+}
+/* عندما نخفي الصور الجانبية، نزيل الفراغ ونرتّب المحتوى للأعلى */
+.table-with-sides.hide-sides {
+  /* خفّض المساحة العلوية والسفلية للحاوية */
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+/* نرفّع الغلاف الداخلي (الجدول) قليلًا ليتقدّم نحو الأعلى */
+.table-with-sides.hide-sides .table-wrapper {
+  transform: translateY(-28px);
+  transition: transform 220ms ease;
+}
+
+.table-with-sides.hide-sides .quistioncontainer {
+  margin-top: -20px; /* عدّلي الرقم حسب الحاجة */
+  transition: margin-top 220ms ease;
+}
+
+        
 
