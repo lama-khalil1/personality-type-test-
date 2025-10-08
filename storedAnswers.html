@@ -92,7 +92,9 @@ header h2 {
             <tr><td colspan="5">جاري تحميل البيانات...</td></tr>
         </tbody>
     </table>
-    
+    <br />
+    <button id="exportBtn">تصدير</button>
+
     </main>
 
     <footer>
@@ -165,8 +167,89 @@ header h2 {
 
         loadResults();
     </script>
+   <!-- استيراد مكتبة Excel -->
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+<script>
+document.getElementById("exportBtn").addEventListener("click", () => {
+    const table = document.querySelector("table");
+
+    // إنشاء workbook من الجدول مع raw:true لمنع التحويل التلقائي
+    const workbook = XLSX.utils.table_to_book(table, { 
+        sheet: "نتائج الأطفال",
+        raw: true
+    });
+
+    const worksheet = workbook.Sheets["نتائج الأطفال"];
+    const range = XLSX.utils.decode_range(worksheet["!ref"]);
+
+    // 🟢 ضبط التنسيق العام لكل الخلايا
+    for (let R = range.s.r; R <= range.e.r; ++R) {
+        for (let C = range.s.c; C <= range.e.c; ++C) {
+            const cellAddress = XLSX.utils.encode_cell({ r: R, c: C });
+            const cell = worksheet[cellAddress];
+            if (!cell) continue;
+
+            // منع تحويل القيم المشابهة للتاريخ
+            if (typeof cell.v === "string" && cell.v.includes("/")) {
+                cell.t = "s";
+                cell.v = "'" + cell.v;
+            }
+
+            // 🔹 تلوين رأس الجدول
+            if (R === 0) {
+                cell.s = {
+                    fill: { fgColor: { rgb: "24A148" } },
+                    font: { bold: true, color: { rgb: "FFFFFF" }, name: "Cairo", sz: 13 },
+                    alignment: { horizontal: "center", vertical: "center", wrapText: true },
+                    border: {
+                        top: { style: "thin", color: { rgb: "CCCCCC" } },
+                        bottom: { style: "thin", color: { rgb: "CCCCCC" } },
+                        left: { style: "thin", color: { rgb: "CCCCCC" } },
+                        right: { style: "thin", color: { rgb: "CCCCCC" } }
+                    }
+                };
+            } 
+            // 🔹 باقي الصفوف
+            else {
+                cell.s = {
+                    fill: { fgColor: { rgb: R % 2 === 0 ? "F5F9F6" : "FFFFFF" } },
+                    font: { color: { rgb: "000000" }, name: "Cairo", sz: 12 },
+                    alignment: { horizontal: "center", vertical: "center", wrapText: true },
+                    border: {
+                        top: { style: "thin", color: { rgb: "E4E4E4" } },
+                        bottom: { style: "thin", color: { rgb: "E4E4E4" } },
+                        left: { style: "thin", color: { rgb: "E4E4E4" } },
+                        right: { style: "thin", color: { rgb: "E4E4E4" } }
+                    }
+                };
+            }
+        }
+    }
+
+    // ✨ تحديد عرض الأعمدة (حتى يبان النص كامل)
+    // ترتيب الأعمدة حسب الجدول: التاريخ - النمط - الفصل - الاسم
+    worksheet["!cols"] = [
+        { wch: 22 }, // تاريخ التسجيل
+        { wch: 20 }, // نمط التفكير
+        { wch: 15 }, // الفصل
+        { wch: 25 }  // الاسم
+    ];
+
+    // ✨ زيادة ارتفاع الصفوف قليلاً
+    const rowHeights = [];
+    for (let R = range.s.r; R <= range.e.r; ++R) {
+        rowHeights.push({ hpt: R === 0 ? 24 : 20 }); // رأس الجدول أعلى قليلاً
+    }
+    worksheet["!rows"] = rowHeights;
+
+    // حفظ الملف بالاسم المطلوب
+    XLSX.writeFile(workbook, "نتائج_الأطفال.xlsx");
+});
+</script>
+
+
 </body>
 </html>
-
 
 
